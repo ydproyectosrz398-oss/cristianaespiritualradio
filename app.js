@@ -36,7 +36,7 @@ const songs = [
   { title: "Comed y bebed", file: "ComedYBebed.mp3" },
   { title: "Contigo esta", file: "ContigoEsta.mp3" },
   { title: "Coros celestiales", file: "CorosCelestiales.mp3" },
-  { title: "Convencion", file: "Convencion.mp3" },
+  { title: "Convencion", file: "convencion.mp3" },
   { title: "Cristo vino", file: "CristoVino.mp3" }
 ];
 
