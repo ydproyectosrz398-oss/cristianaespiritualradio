@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  body{
+    background:black;
+    color:white;
+    font-family:Arial;
+    overflow:hidden;
+  }
+  
+  /* INTRO */
+  
+  #intro{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    z-index:999;
+    background:black;
+  
+    transition:0.8s;
+  }
+  #intro video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  
+  /* PLAYER */
+  
+  .hidden{
+    display:none;
+  }
+  
+  #player{
+  
+    width:100%;
+    height:100vh;
+  
+    display:flex;
+    flex-direction:column;
+  
+    justify-content:center;
+    align-items:center;
+  
+    padding:20px;
+  }
+  
+  /* PORTADA */
+  
+  .cover{
+  
+    width:280px;
+    height:280px;
+  
+    object-fit:cover;
+  
+    border-radius:25px;
+  
+    margin-bottom:30px;
+  
+    box-shadow:0 0 40px rgba(255,255,255,0.1);
+  
+    animation:float 4s ease-in-out infinite;
+  }
+  
+  @keyframes float{
+  
+    0%{
+      transform:translateY(0px);
+    }
+  
+    50%{
+      transform:translateY(-10px);
+    }
+  
+    100%{
+      transform:translateY(0px);
+    }
+  
+  }
+  
+  /* TITULOS */
+  
+  h1{
+    font-size:32px;
+    margin-bottom:10px;
+  }
+  
+  .status{
+    color:#00ff88;
+    margin-bottom:30px;
+  }
+  
+  /* BOTON PLAY */
+  
+  #playBtn{
+  
+    background:white;
+    color:black;
+  
+    border:none;
+  
+    padding:18px 50px;
+  
+    border-radius:50px;
+  
+    font-size:18px;
+    font-weight:bold;
+  
+    cursor:pointer;
+  
+    transition:0.3s;
+  }
+  
+  #playBtn:hover{
+    transform:scale(1.05);
+  }
+  
+  /* BOTON INSTALAR */
+  
+  #installBtn{
+  
+    position:fixed;
+  
+    top:20px;
+    right:20px;
+  
+    display:flex;
+    align-items:center;
+    gap:10px;
+  
+    background:rgba(255,122,0,0.15);
+  
+    backdrop-filter:blur(12px);
+  
+    color:white;
+  
+    border:1px solid rgba(255,255,255,0.1);
+  
+    padding:14px 22px;
+  
+    border-radius:50px;
+  
+    font-size:15px;
+    font-weight:bold;
+  
+    cursor:pointer;
+  
+    z-index:9999;
+  
+    box-shadow:
+    0 0 25px rgba(255,122,0,0.4);
+  
+    transition:0.3s;
+  
+    animation:pulse 2s infinite;
+  }
+  
+  #installBtn:hover{
+  
+    transform:scale(1.05);
+  
+  }
+  
+  /* ICONO */
+  
+  .icon{
+  
+    width:28px;
+    height:28px;
+  
+    border-radius:50%;
+  
+    background:#ff7a00;
+  
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  
+    font-size:16px;
+  }
+  
+  /* ANIMACION BOTON */
+  
+  @keyframes pulse{
+  
+    0%{
+      box-shadow:0 0 0 0 rgba(255,122,0,0.5);
+    }
+  
+    70%{
+      box-shadow:0 0 0 18px rgba(255,122,0,0);
+    }
+  
+    100%{
+      box-shadow:0 0 0 0 rgba(255,122,0,0);
+    }
+
+    }
+  .userBox{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:15px;
+
+  margin-top:20px;
+}
+
+#loginBtn{
+
+  background:white;
+  color:black;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:12px;
+
+  padding:14px 28px;
+
+  border-radius:50px;
+
+  font-size:16px;
+  font-weight:bold;
+
+  border:none;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  box-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+
+#loginBtn img{
+
+  width:22px;
+  height:22px;
+}
+
+#loginBtn:hover{
+
+  transform:scale(1.05);
+}
+#likeBtn{
+
+  margin-top:20px;
+
+  background:#ff004c;
+  color:white;
+
+  font-size:22px;
+
+  padding:15px 35px;
+
+  border-radius:50px;
+
+  box-shadow:0 0 20px rgba(255,0,76,0.5);
+}
+
+#userInfo{
+
+  font-size:14px;
+
+  opacity:0.8;
+}
+  
