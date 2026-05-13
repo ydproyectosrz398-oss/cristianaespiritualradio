@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Cristiana</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 <body>
-    <div class="app-container">
-        
-        <div class="header-actions">
-            <button class="install-btn">⬇️ Instalar App</button>
-        </div>
-
-        <div class="cassette-box">
-            <!-- Asegúrate que el nombre sea el mismo que tienes en GitHub -->
-            <img src="assetsportada.png" alt="Cassette">
-        </div>
-
-        <h2>Comed y bebed</h2>
-        <p class="status">● EN VIVO</p>
-
-        <button class="pill-button google-btn">
-            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" width="20"> 
-            Iniciar con Google
-        </button>
-
-        <button class="pill-button like-btn">
-            ❤️ 0
-        </button>
-
-        <button class="pill-button pause-btn" id="play-btn">
-            PAUSE
-        </button>
-
+    <div id="intro">
+        <video id="introVideo" src="intro.mp4" autoplay muted playsinline></video>
     </div>
+
+    <div id="player" class="app-container hidden">
+        <div class="header">
+            <button id="installBtn">⬇️ Instalar App</button>
+        </div>
+        <div class="cassette-box">
+            <img src="assetsportada.png" alt="Cover">
+        </div>
+        <h2 id="songTitle">Cargando...</h2>
+        <p class="status">● EN VIVO</p>
+        
+        <button id="loginBtn" class="pill-btn white-btn">Iniciar con Google</button>
+        <div id="userInfo" style="margin-bottom: 10px;"></div>
+        
+        <button id="likeBtn" class="pill-btn pink-btn">❤️ 0</button>
+        <button id="playBtn" class="pill-btn white-btn">PAUSE</button>
+        <audio id="audio"></audio>
+    </div>
+
     <script src="app.js"></script>
+</body>
+</html>></script>
 </body>
 </html>
