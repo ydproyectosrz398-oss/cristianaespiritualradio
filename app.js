@@ -10,7 +10,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-/* ELEMENTOS */
+/* ELEMENTOS DEL DOM */
 const intro = document.getElementById("intro");
 const video = document.getElementById("introVideo");
 const player = document.getElementById("player");
@@ -18,16 +18,9 @@ const audio = document.getElementById("audio");
 const playBtn = document.getElementById("playBtn");
 const songTitle = document.getElementById("songTitle");
 
-/* DESBLOQUEAR AUDIO MOVIL */
-document.addEventListener("click", () => {
-  audio.play().catch(() => {});
-}, { once: true });
-
-/* =========================
-   PLAYLIST (Rutas corregidas sin assets/music/)
-========================= */
+/* PLAYLIST (Rutas a la raíz de GitHub) */
 const songs = [
-  { title: "📻 Radio", file: "AnuncioRadio.mp3", ad: true },
+  { title: "📻 Radio", file: "AnuncioRadio.mp3" }, // Posición 0
   { title: "Calles de oro", file: "CallesDeOro.mp3" },
   { title: "Camina Por Las Aguas", file: "CaminaPorLasAguas.mp3" },
   { title: "Canta a Dios", file: "CantaADios.mp3" },
@@ -36,7 +29,7 @@ const songs = [
   { title: "Comed y bebed", file: "ComedYBebed.mp3" },
   { title: "Contigo esta", file: "ContigoEsta.mp3" },
   { title: "Coros celestiales", file: "CorosCelestiales.mp3" },
-  { title: "Convencion", file: "convencion.mp3" },
+  { title: "Convencion", file: "Convencion.mp3" },
   { title: "Cristo vino", file: "CristoVino.mp3" }
 ];
 
@@ -44,32 +37,25 @@ let currentSong = 0;
 let songsPlayed = 0;
 let playing = false;
 
-// Cargar primera canción
-audio.src = songs[currentSong].file;
-songTitle.innerText = songs[currentSong].title;
+/* DESBLOQUEO DE AUDIO */
+document.addEventListener("click", () => {
+  if(audio.paused && playing) audio.play().catch(() => {});
+}, { once: true });
 
-/* =========================
-   INTRO VIDEO (Ruta corregida)
-========================= */
+/* INTRO VIDEO */
 video.onended = () => {
   intro.style.opacity = "0";
   setTimeout(() => {
     intro.style.display = "none";
     player.classList.remove("hidden");
-    audio.play().then(() => {
-      playBtn.innerText = "PAUSE";
-      playing = true;
-    }).catch(() => {
-      console.log("Autoplay bloqueado");
-    });
+    playing = true;
+    audio.play().then(() => { playBtn.innerText = "PAUSE"; }).catch(() => {});
   }, 800);
 };
 
-/* =========================
-   PLAY / PAUSE
-========================= */
+/* PLAY / PAUSE */
 playBtn.addEventListener("click", () => {
-  if (!playing) {
+  if(audio.paused) {
     audio.play();
     playBtn.innerText = "PAUSE";
     playing = true;
@@ -80,9 +66,7 @@ playBtn.addEventListener("click", () => {
   }
 });
 
-/* =========================
-   FIREBASE RADIO
-========================= */
+/* FIREBASE: SINCRONIZACIÓN EN TIEMPO REAL */
 const radioRef = db.ref("radio");
 
 radioRef.on("value", (snapshot) => {
@@ -97,18 +81,12 @@ radioRef.on("value", (snapshot) => {
   const elapsed = (now - data.startedAt) / 1000;
 
   audio.onloadedmetadata = () => {
-    if (elapsed < audio.duration) {
-      audio.currentTime = elapsed;
-    }
-    audio.play().then(() => {
-      playBtn.innerText = "PAUSE";
-      playing = true;
-    }).catch(() => {
-      console.log("Autoplay bloqueado");
-    });
+    if (elapsed < audio.duration) audio.currentTime = elapsed;
+    if (playing) audio.play().catch(() => {});
   };
 });
 
+/* LÓGICA DE 3 CANCIONES + ANUNCIO */
 audio.addEventListener("ended", () => {
   let nextSong;
   if (currentSong === 0) {
@@ -116,91 +94,46 @@ audio.addEventListener("ended", () => {
   } else {
     songsPlayed++;
     if (songsPlayed >= 3) {
-      nextSong = 0;
+      nextSong = 0; // Toca AnuncioRadio.mp3
       songsPlayed = 0;
     } else {
       nextSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
     }
   }
-  radioRef.set({
-    currentSong: nextSong,
-    startedAt: Date.now()
-  });
+  radioRef.set({ currentSong: nextSong, startedAt: Date.now() });
 });
 
-/* =========================
-   INSTALAR PWA
-========================= */
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-installBtn.style.display = "none";
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = "flex";
-});
-
-installBtn.addEventListener("click", async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
-      installBtn.style.display = "none";
-    }
-  }
-});
-
-/* =========================
-   FIREBASE AUTH
-========================= */
+/* LIKES & LOGIN */
+const likeBtn = document.getElementById("likeBtn");
 const loginBtn = document.getElementById("loginBtn");
 const userInfo = document.getElementById("userInfo");
 const provider = new firebase.auth.GoogleAuthProvider();
 let currentUser = null;
 
 loginBtn.addEventListener("click", () => {
-  firebase.auth().signInWithPopup(provider)
-    .then(() => { console.log("Login correcto"); })
-    .catch((error) => { console.log(error); });
+  firebase.auth().signInWithPopup(provider).catch(e => console.log(e));
 });
 
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
+  if(user) {
     currentUser = user;
     loginBtn.style.display = "none";
     userInfo.innerHTML = `👋 ${user.displayName}`;
   }
 });
 
-/* =========================
-   LIKES
-========================= */
-const likeBtn = document.getElementById("likeBtn");
-const likesRef = db.ref("likes");
-
-likesRef.on("value", (snapshot) => {
-  const totalLikes = snapshot.val() || 0;
-  likeBtn.innerHTML = `❤️ ${totalLikes}`;
+db.ref("likes").on("value", (snapshot) => {
+  likeBtn.innerHTML = `❤️ ${snapshot.val() || 0}`;
 });
 
 likeBtn.addEventListener("click", () => {
-  if (!currentUser) {
-    alert("Inicia sesión primero");
-    return;
-  }
-  likesRef.transaction((currentLikes) => {
-    return (currentLikes || 0) + 1;
-  });
+  if(!currentUser) return alert("Inicia sesión primero");
+  db.ref("likes").transaction(c => (c || 0) + 1);
 });
 
-/* =========================
-   SERVICE WORKER
-========================= */
-if ("serviceWorker" in navigator) {
+/* SERVICE WORKER */
+if("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js")
-      .then(() => { console.log("Service Worker registrado"); })
-      .catch((err) => { console.log("Error al registrar SW:", err); });
+    navigator.serviceWorker.register("sw.js");
   });
 }
