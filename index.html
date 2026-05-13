@@ -1,59 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Radio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Cristiana</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="app-container">
+        
+        <div class="header-actions">
+            <button class="install-btn">⬇️ Instalar App</button>
+        </div>
 
-  <!-- BOTON INSTALAR -->
-  <button id="installBtn" style="display:none;">
-    <span class="icon">↓</span>
-    Instalar App
-  </button>
+        <div class="cassette-box">
+            <!-- Asegúrate que el nombre sea el mismo que tienes en GitHub -->
+            <img src="assets portada.png" alt="Cassette">
+        </div>
 
-  <!-- INTRO -->
-  <div id="intro">
-    <video id="introVideo" autoplay muted playsinline>
-      <!-- Eliminamos 'assets/' y usamos el nombre sin espacios -->
-      <source src="intro.mp4" type="video/mp4">
-    </video>
-  </div>
+        <h2>Comed y bebed</h2>
+        <p class="status">● EN VIVO</p>
 
-  <!-- PLAYER -->
-  <div id="player" class="hidden">
-    <!-- Eliminamos 'assets/' y usamos el nombre corregido -->
-    <img src="cover.png" class="cover">
+        <button class="pill-button google-btn">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" width="20"> 
+            Iniciar con Google
+        </button>
 
-    <h1 id="songTitle">Cargando...</h1>
-    
-    <p class="status">● EN VIVO</p>
+        <button class="pill-button like-btn">
+            ❤️ 0
+        </button>
 
-    <div class="userBox">
-      <button id="loginBtn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
-        Iniciar con Google
-      </button>
-      <div id="userInfo"></div>
+        <button class="pill-button pause-btn" id="play-btn">
+            PAUSE
+        </button>
+
     </div>
-
-    <button id="likeBtn">❤️ 0</button>
-
-    <button id="playBtn">PLAY</button>
-
-    <audio id="audio">
-      <source src="" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <!-- FIREBASE -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-  <script src="app.js"></script>
-
+    <script src="app.js"></script>
 </body>
 </html>
