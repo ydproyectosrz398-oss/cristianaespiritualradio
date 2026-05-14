@@ -1,139 +1,75 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyAhQzly1lZemafx1SU1iQKlav6oyDTOqKw",
-  authDomain: "radiocristianaespiritual.firebaseapp.com",
-  projectId: "radiocristianaespiritual",
-  storageBucket: "radiocristianaespiritual.firebasestorage.app",
-  messagingSenderId: "93851149213",
-  appId: "1:93851149213:web:5816335e8b9e8d6314c574"
-};
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+    <title>Radio Cristiana Espiritual</title>
 
-/* ELEMENTOS DEL DOM */
-const intro = document.getElementById("intro");
-const video = document.getElementById("introVideo");
-const player = document.getElementById("player");
-const audio = document.getElementById("audio");
-const playBtn = document.getElementById("playBtn");
-const songTitle = document.getElementById("songTitle");
+    <link rel="stylesheet" href="style.css">
 
-/* PLAYLIST (Rutas a la raíz de GitHub) */
-const songs = [
-  { title: "📻 Radio", file: "AnuncioRadio.mp3" }, // Posición 0
-  { title: "Calles de oro", file: "CallesDeOro.mp3" },
-  { title: "Camina Por Las Aguas", file: "CaminaPorLasAguas.mp3" },
-  { title: "Canta a Dios", file: "CantaADios.mp3" },
-  { title: "Cantale", file: "Cantale.mp3" },
-  { title: "Cantaran los santos", file: "CantaranLosSantos.mp3" },
-  { title: "Comed y bebed", file: "ComedYBebed.mp3" },
-  { title: "Contigo esta", file: "ContigoEsta.mp3" },
-  { title: "Coros celestiales", file: "CorosCelestiales.mp3" },
-  { title: "Convencion", file: "Convencion.mp3" },
-  { title: "Cristo vino", file: "CristoVino.mp3" }
-];
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
-let currentSong = 0;
-let songsPlayed = 0;
-let playing = false;
+    <!-- ICON -->
+    <link rel="shortcut icon" href="icon.png">
+</head>
 
-/* DESBLOQUEO DE AUDIO */
-document.addEventListener("click", () => {
-  if(audio.paused && playing) audio.play().catch(() => {});
-}, { once: true });
+<body>
 
-/* INTRO VIDEO */
-video.onended = () => {
-  intro.style.opacity = "0";
-  setTimeout(() => {
-    intro.style.display = "none";
-    player.classList.remove("hidden");
-    playing = true;
-    audio.play().then(() => { playBtn.innerText = "PAUSE"; }).catch(() => {});
-  }, 800);
-};
+    <!-- INTRO VIDEO -->
+    <div id="intro">
+        <video id="introVideo" autoplay muted playsinline>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+    </div>
 
-/* PLAY / PAUSE */
-playBtn.addEventListener("click", () => {
-  if(audio.paused) {
-    audio.play();
-    playBtn.innerText = "PAUSE";
-    playing = true;
-  } else {
-    audio.pause();
-    playBtn.innerText = "PLAY";
-    playing = false;
-  }
-});
+    <!-- PLAYER -->
+    <div class="app-container hidden" id="player">
 
-/* FIREBASE: SINCRONIZACIÓN EN TIEMPO REAL */
-const radioRef = db.ref("radio");
+        <div class="header-actions">
+            <button id="installBtn">⬇️ Instalar App</button>
+        </div>
 
-radioRef.on("value", (snapshot) => {
-  const data = snapshot.val();
-  if (!data) return;
+        <div class="cassette-box">
+            <img src="portada.png" alt="Portada Radio">
+        </div>
 
-  currentSong = data.currentSong;
-  audio.src = songs[currentSong].file;
-  songTitle.innerText = songs[currentSong].title;
+        <div class="info-section">
+            <h2 id="songTitle">Sincronizando...</h2>
+            <p class="status"><span>●</span> EN VIVO</p>
+        </div>
 
-  const now = Date.now();
-  const elapsed = (now - data.startedAt) / 1000;
+        <!-- LOGIN -->
+        <button id="loginBtn" class="pill-button white-btn">
+            <img 
+                src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"
+                class="google-icon"
+                alt="Google"
+            >
+            Iniciar con Google
+        </button>
 
-  audio.onloadedmetadata = () => {
-    if (elapsed < audio.duration) audio.currentTime = elapsed;
-    if (playing) audio.play().catch(() => {});
-  };
-});
+        <div id="userInfo" style="color:#aaa; font-size:0.9rem;"></div>
 
-/* LÓGICA DE 3 CANCIONES + ANUNCIO */
-audio.addEventListener("ended", () => {
-  let nextSong;
-  if (currentSong === 0) {
-    nextSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
-  } else {
-    songsPlayed++;
-    if (songsPlayed >= 3) {
-      nextSong = 0; // Toca AnuncioRadio.mp3
-      songsPlayed = 0;
-    } else {
-      nextSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
-    }
-  }
-  radioRef.set({ currentSong: nextSong, startedAt: Date.now() });
-});
+        <!-- LIKE -->
+        <button id="likeBtn" class="pill-button pink-btn">
+            ❤️ 0
+        </button>
 
-/* LIKES & LOGIN */
-const likeBtn = document.getElementById("likeBtn");
-const loginBtn = document.getElementById("loginBtn");
-const userInfo = document.getElementById("userInfo");
-const provider = new firebase.auth.GoogleAuthProvider();
-let currentUser = null;
+        <!-- PLAY -->
+        <button id="playBtn" class="pill-button white-btn">
+            PLAY
+        </button>
 
-loginBtn.addEventListener("click", () => {
-  firebase.auth().signInWithPopup(provider).catch(e => console.log(e));
-});
+        <!-- AUDIO -->
+        <audio id="audio"></audio>
 
-firebase.auth().onAuthStateChanged((user) => {
-  if(user) {
-    currentUser = user;
-    loginBtn.style.display = "none";
-    userInfo.innerHTML = `👋 ${user.displayName}`;
-  }
-});
+    </div>
 
-db.ref("likes").on("value", (snapshot) => {
-  likeBtn.innerHTML = `❤️ ${snapshot.val() || 0}`;
-});
+    <script src="app.js"></script>
 
-likeBtn.addEventListener("click", () => {
-  if(!currentUser) return alert("Inicia sesión primero");
-  db.ref("likes").transaction(c => (c || 0) + 1);
-});
-
-/* SERVICE WORKER */
-if("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js");
-  });
-}
+</body>
+</html>
