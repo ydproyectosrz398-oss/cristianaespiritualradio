@@ -49,21 +49,20 @@ let currentUser = null;
 /* INTRO */
 if(video) {
 
-  video.onended = () => {
+    video.onended = () => {
 
-    intro.style.display = "none";
+        intro.style.opacity = "0";
 
-    player.classList.remove("hidden");
+        setTimeout(() => {
 
-    audio.src = songs[0].file;
+            intro.style.display = "none";
 
-    songTitle.innerText = songs[0].title;
+            player.classList.remove("hidden");
 
-    playBtn.innerText = "PLAY";
-  };
+        }, 500);
+    };
 }
-}
-}
+
 
 /* PLAY BUTTON */
 playBtn.addEventListener("click", async () => {
