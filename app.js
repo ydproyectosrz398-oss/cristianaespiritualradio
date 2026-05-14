@@ -72,10 +72,6 @@ if(video){
 
         intro.remove();
 
-        player.classList.remove("hidden");
-
-    }, 5000);
-}
 
 /* PLAY BUTTON */
 
