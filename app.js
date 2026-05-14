@@ -52,9 +52,14 @@ if(video) {
     intro.style.display = "none";
     player.classList.remove("hidden");
 
-  audio.play().catch(() => {
-  console.log("Autoplay bloqueado");
-});
+    audio.play()
+      .then(() => {
+        playing = true;
+        playBtn.innerText = "PAUSE";
+      })
+      .catch(err => console.log(err));
+  };
+}
 }
 
 /* PLAY BUTTON */
