@@ -2,39 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Cristiana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Radio Cristiana Espiritual</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+    <!-- Scripts de Firebase que ya tienes -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <link rel="shorcut icon" href=icon.png>
 </head>
 <body>
-    <div id="intro">
-        <video id="introVideo" src="intro.mp4" autoplay muted playsinline></video>
-    </div>
 
-    <div id="player" class="app-container hidden">
-        <div class="header">
+    <div class="app-container" id="player">
+        
+        <div class="header-actions">
             <button id="installBtn">⬇️ Instalar App</button>
         </div>
+
         <div class="cassette-box">
-            <img src="assetsportada.png" alt="Cover">
+            <img src="./assetsportada.png" alt="Portada Radio">
         </div>
-        <h2 id="songTitle">Cargando...</h2>
-        <p class="status">● EN VIVO</p>
-        
-        <button id="loginBtn" class="pill-btn white-btn">Iniciar con Google</button>
-        <div id="userInfo" style="margin-bottom: 10px;"></div>
-        
-        <button id="likeBtn" class="pill-btn pink-btn">❤️ 0</button>
-        <button id="playBtn" class="pill-btn white-btn">PAUSE</button>
+
+        <div class="info-section">
+            <h2 id="songTitle">Sincronizando...</h2>
+            <p class="status"><span>●</span> EN VIVO</p>
+        </div>
+
+        <!-- Botones de Acción -->
+        <button id="loginBtn" class="pill-button white-btn">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="google-icon">
+            Iniciar con Google
+        </button>
+
+        <div id="userInfo" style="color: #aaa; font-size: 0.9rem;"></div>
+
+        <button id="likeBtn" class="pill-button pink-btn">❤️ 0</button>
+
+        <button id="playBtn" class="pill-button white-btn">PAUSE</button>
+
         <audio id="audio"></audio>
     </div>
 
     <script src="app.js"></script>
-</body>
-</html>></script>
 </body>
 </html>
