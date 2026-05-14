@@ -47,9 +47,10 @@ let playing = false;
 let currentUser = null;
 
 /* INTRO */
-if(video) {
 
-    video.onended = () => {
+if(video){
+
+    setTimeout(() => {
 
         intro.style.opacity = "0";
 
@@ -60,7 +61,8 @@ if(video) {
             player.classList.remove("hidden");
 
         }, 500);
-    };
+
+    }, 5000); // 5 segundos
 }
 
 
