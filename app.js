@@ -95,41 +95,23 @@ if(video){
     }, 5000);
 }
 
-/* =========================
-   PLAY BUTTON
-========================= */
+/* PLAY BUTTON */
 
-playBtn.addEventListener("click", async () => {
+playBtn.addEventListener("click", () => {
 
-    try{
+    if(audio.paused){
 
-        if(!audio.src){
+        audio.src = "AnuncioRadio.mp3";
 
-            audio.src = songs[currentSong].file;
+        audio.play();
 
-            songTitle.innerText = songs[currentSong].title;
-        }
+        playBtn.innerText = "PAUSE";
 
-        if(audio.paused){
+    }else{
 
-            await audio.play();
+        audio.pause();
 
-            playBtn.innerText = "PAUSE";
-
-            playing = true;
-
-        }else{
-
-            audio.pause();
-
-            playBtn.innerText = "PLAY";
-
-            playing = false;
-        }
-
-    }catch(err){
-
-        console.log("Error audio:", err);
+        playBtn.innerText = "PLAY";
     }
 });
 
