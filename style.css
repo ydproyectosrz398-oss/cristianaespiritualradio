@@ -1,24 +1,27 @@
-/* =========================
-   INTRO VIDEO
-========================= */
-
-#intro{
+/#intro{
     position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    z-index: 9999;
+    top: 0;
+    left: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    background: black;
+
+    z-index: 99999;
+
+    overflow: hidden;
 }
 
 #intro video{
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+}
+
+.hidden{
+    display: none !important;
 }
 
 /* =========================
