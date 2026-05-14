@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Radio Cristiana Espiritual</title>
+
     <link rel="stylesheet" href="style.css">
-    <!-- Scripts de Firebase que ya tienes -->
+
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <link rel="shorcut icon" href=icon.png>
+
+    <!-- ICON -->
+    <link rel="shortcut icon" href="icon.png">
 </head>
+
 <body>
 
-    <div class="app-container" id="player">
-        
+    <!-- INTRO VIDEO -->
+    <div id="intro">
+        <video id="introVideo" autoplay muted playsinline>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- PLAYER -->
+    <div class="app-container hidden" id="player">
+
         <div class="header-actions">
             <button id="installBtn">⬇️ Instalar App</button>
         </div>
 
         <div class="cassette-box">
-            <img src="./assetsportada.png" alt="Portada Radio">
+            <img src="assetsportada.png" alt="Portada Radio">
         </div>
 
         <div class="info-section">
@@ -28,21 +42,34 @@
             <p class="status"><span>●</span> EN VIVO</p>
         </div>
 
-        <!-- Botones de Acción -->
+        <!-- LOGIN -->
         <button id="loginBtn" class="pill-button white-btn">
-            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="google-icon">
+            <img 
+                src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"
+                class="google-icon"
+                alt="Google"
+            >
             Iniciar con Google
         </button>
 
-        <div id="userInfo" style="color: #aaa; font-size: 0.9rem;"></div>
+        <div id="userInfo" style="color:#aaa; font-size:0.9rem;"></div>
 
-        <button id="likeBtn" class="pill-button pink-btn">❤️ 0</button>
+        <!-- LIKE -->
+        <button id="likeBtn" class="pill-button pink-btn">
+            ❤️ 0
+        </button>
 
-        <button id="playBtn" class="pill-button white-btn">PAUSE</button>
+        <!-- PLAY -->
+        <button id="playBtn" class="pill-button white-btn">
+            PLAY
+        </button>
 
+        <!-- AUDIO -->
         <audio id="audio"></audio>
+
     </div>
 
     <script src="app.js"></script>
+
 </body>
 </html>
