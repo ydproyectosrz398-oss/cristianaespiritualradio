@@ -8,19 +8,27 @@ const firebaseConfig = {
     appId: "1:93851149213:web:5816335e8b9e8d6314c574"
 };
 
-/* =========================
-   FIREBASE
-========================= */
+/* FIREBASE */
 
-/* SONG INICIAL */
+firebase.initializeApp(firebaseConfig);
 
-audio.src = songs[0].file;
+const db = firebase.database();
 
-songTitle.innerText = songs[0].title;
+/* ELEMENTOS */
 
-/* =========================
-   PLAYLIST
-========================= */
+const audio = document.getElementById("audio");
+
+const playBtn = document.getElementById("playBtn");
+
+const songTitle = document.getElementById("songTitle");
+
+const likeBtn = document.getElementById("likeBtn");
+
+const loginBtn = document.getElementById("loginBtn");
+
+const userInfo = document.getElementById("userInfo");
+
+/* PLAYLIST */
 
 const songs = [
 
@@ -52,108 +60,62 @@ const songs = [
 
 ];
 
-/* =========================
-   VARIABLES
-========================= */
+/* VARIABLES */
 
 let currentSong = 0;
 
-let playing = false;
-
 let currentUser = null;
 
-/* =========================
-   INTRO
-========================= */
+/* CANCION INICIAL */
 
-if(video){
+audio.src = songs[0].file;
 
-    setTimeout(() => {
+songTitle.innerText = songs[0].title;
 
-        intro.remove();
+/* PLAY */
 
+playBtn.addEventListener("click", async () => {
 
-/* PLAY BUTTON */
+    try{
 
-playBtn.addEventListener("click", () => {
+        if(audio.paused){
 
-    if(audio.paused){
+            await audio.play();
 
-        audio.src = "AnuncioRadio.mp3";
+            playBtn.innerText = "PAUSE";
 
-        audio.play();
+        }else{
 
-        playBtn.innerText = "PAUSE";
+            audio.pause();
 
-    }else{
+            playBtn.innerText = "PLAY";
+        }
 
-        audio.pause();
+    }catch(error){
 
-        playBtn.innerText = "PLAY";
+        console.log(error);
     }
 });
 
-/* =========================
-   FIREBASE RADIO
-========================= */
+/* SIGUIENTE */
 
-const radioRef = db.ref("radio");
+audio.addEventListener("ended", () => {
 
-radioRef.on("value", snapshot => {
+    currentSong++;
 
-    const data = snapshot.val();
+    if(currentSong >= songs.length){
 
-    if(!data || data.currentSong === undefined){
-
-        radioRef.set({
-            currentSong: 0,
-            startedAt: Date.now()
-        });
-
-        return;
+        currentSong = 0;
     }
-
-    currentSong = data.currentSong;
-
-    if(!songs[currentSong]) return;
 
     audio.src = songs[currentSong].file;
 
     songTitle.innerText = songs[currentSong].title;
 
-    const elapsed = (Date.now() - data.startedAt) / 1000;
-
-    audio.onloadedmetadata = () => {
-
-        if(elapsed < audio.duration){
-
-            audio.currentTime = elapsed;
-        }
-
-        if(playing){
-
-            audio.play().catch(() => {});
-        }
-    };
+    audio.play();
 });
 
-/* =========================
-   NEXT SONG
-========================= */
-
-audio.addEventListener("ended", () => {
-
-    let nextSong = Math.floor(Math.random() * songs.length);
-
-    radioRef.set({
-        currentSong: nextSong,
-        startedAt: Date.now()
-    });
-});
-
-/* =========================
-   LOGIN GOOGLE
-========================= */
+/* LOGIN GOOGLE */
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -161,13 +123,15 @@ loginBtn.addEventListener("click", () => {
 
     firebase.auth()
         .signInWithPopup(provider)
-        .catch(err => {
+        .catch(error => {
 
-            console.log(err);
+            console.log(error);
 
-            alert("Error login Google");
+            alert("Error login");
         });
 });
+
+/* USER */
 
 firebase.auth().onAuthStateChanged(user => {
 
@@ -181,9 +145,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-/* =========================
-   LIKES
-========================= */
+/* LIKES */
 
 db.ref("likes").on("value", snapshot => {
 
@@ -202,17 +164,9 @@ likeBtn.addEventListener("click", () => {
     db.ref("likes").transaction(current => (current || 0) + 1);
 });
 
-/* =========================
-   SERVICE WORKER
-========================= */
+/* SERVICE WORKER */
 
 if("serviceWorker" in navigator){
 
-    window.addEventListener("load", () => {
-
-        navigator.serviceWorker
-            .register("sw.js")
-            .then(() => console.log("SW OK"))
-            .catch(err => console.log(err));
-    });
+    navigator.serviceWorker.register("sw.js");
 }
