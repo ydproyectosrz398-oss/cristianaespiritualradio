@@ -48,21 +48,17 @@ let currentUser = null;
 
 /* INTRO */
 
+/* INTRO */
+
 if(video){
 
     setTimeout(() => {
 
-        intro.style.opacity = "0";
+        intro.style.display = "none";
 
-        setTimeout(() => {
+        player.classList.remove("hidden");
 
-            intro.style.display = "none";
-
-            player.classList.remove("hidden");
-
-        }, 500);
-
-    }, 5000); // 5 segundos
+    }, 5000);
 }
 
 
