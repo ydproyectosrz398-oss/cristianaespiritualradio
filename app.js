@@ -12,29 +12,11 @@ const firebaseConfig = {
    FIREBASE
 ========================= */
 
-firebase.initializeApp(firebaseConfig);
+/* SONG INICIAL */
 
-const db = firebase.database();
+audio.src = songs[0].file;
 
-/* =========================
-   ELEMENTOS
-========================= */
-
-const intro = document.getElementById("intro");
-const video = document.getElementById("introVideo");
-const player = document.getElementById("player");
-
-const audio = document.getElementById("audio");
-
-const playBtn = document.getElementById("playBtn");
-
-const songTitle = document.getElementById("songTitle");
-
-const likeBtn = document.getElementById("likeBtn");
-
-const loginBtn = document.getElementById("loginBtn");
-
-const userInfo = document.getElementById("userInfo");
+songTitle.innerText = songs[0].title;
 
 /* =========================
    PLAYLIST
