@@ -68,22 +68,35 @@ if(video) {
 /* PLAY BUTTON */
 playBtn.addEventListener("click", async () => {
 
-  if(!audio.src) {
-    audio.src = songs[0].file;
-  }
+  try {
 
-  if(audio.paused) {
-    try {
-      await audio.play();
-      playBtn.innerText = "PAUSE";
-      playing = true;
-    } catch(err) {
-      console.log(err);
+    if(!audio.src) {
+
+      audio.src = songs[currentSong].file;
+
+      songTitle.innerText = songs[currentSong].title;
     }
-  } else {
-    audio.pause();
-    playBtn.innerText = "PLAY";
-    playing = false;
+
+    if(audio.paused) {
+
+      await audio.play();
+
+      playBtn.innerText = "PAUSE";
+
+      playing = true;
+
+    } else {
+
+      audio.pause();
+
+      playBtn.innerText = "PLAY";
+
+      playing = false;
+    }
+
+  } catch(err) {
+
+    console.log("Error audio:", err);
   }
 });
 
