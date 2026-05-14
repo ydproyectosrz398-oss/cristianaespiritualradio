@@ -1,11 +1,14 @@
 {
-  "name": "Radio Cristiana",
+  "name": "Radio Cristiana Espiritual",
   "short_name": "Radio",
-  "start_url": "./index.html",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ff7a00",
   "orientation": "portrait",
+  "description": "Radio Cristiana Espiritual en vivo",
+
   "icons": [
     {
       "src": "icon.png",
