@@ -38,6 +38,8 @@ const songs = [
   { title: "Coros celestiales", file: "CorosCelestiales.mp3" },
   { title: "Convencion", file: "convencion.mp3" },
   { title: "Cristo vino", file: "CristoVino.mp3" }
+  { title: "7 Trompetas", file: "7trompetas.mp3" }
+{ title: "A tus labios", file: "ATusLabios.mp3" }
 ];
 
 let currentSong = 0;
