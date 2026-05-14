@@ -48,17 +48,20 @@ let currentUser = null;
 
 /* INTRO */
 if(video) {
+
   video.onended = () => {
+
     intro.style.display = "none";
+
     player.classList.remove("hidden");
 
-    audio.play()
-      .then(() => {
-        playing = true;
-        playBtn.innerText = "PAUSE";
-      })
-      .catch(err => console.log(err));
+    audio.src = songs[0].file;
+
+    songTitle.innerText = songs[0].title;
+
+    playBtn.innerText = "PLAY";
   };
+}
 }
 }
 
