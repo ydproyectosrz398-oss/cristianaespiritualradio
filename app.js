@@ -57,6 +57,129 @@ const songs = [
     { title: "7 Trompetas", file: "7trompetas.mp3" },
 
     { title: "A tus labios", file: "ATusLabios.mp3" }
+    
+     { title: "Adan", file: "Adan.mp3" }
+
+     { title: "Ahora Ven", file: "AhoraVen.mp3" }
+
+     { title: "Alabad a Jehova", file: "AlabadAJehova.mp3" }
+
+    { title: "Alabale al Señor", file: "AlabaleAlSeñor.mp3" }
+
+    { title: "Alma asustada", file: "AlmaAsustada.mp3" }
+
+   { title: "Alma cuerpo y corazon", file: "AlmaCuerpoYCorazon.mp3" }
+
+    { title: "Alma de poeta", file: "AlmaDePoeta.mp3" }
+
+   { title: "Almas expuestas", file: "AlmasExpuestas.mp3" }
+
+{ title: "Almas perdidas", file: "AlmasPerdidas.mp3" }
+
+{ title: "Ante tu altar", file: "AnteTuAltar.mp3" }
+ 
+{ title: "Aquella noche", file: "AquellaNoche.mp3" }
+
+ { title: "Aquella tarde gris", file: "AquellaTardeGris.mp3" }
+
+ { title: "Ayuda Idonea", file: "AyudaIdo.mp3" }
+
+ { title: "Basate de mi gracia", file: "BastateMiGracia.mp3" }
+
+ { title: "Cada que me hablan de ti", file: "CadaQueMeHablan.mp3" }
+
+ { title: "Cancion de amor", file: "CancionDeAmor.mp3" }
+
+{ title: "Cancion de amor", file: "Canciondeamor2.mp3" }
+
+{ title: "Cancion de amor", file: "CancionDeAmor.mp3" }
+
+{ title: "El cantar de las aves", file: "CantarDeLasAves.mp3" }
+
+{ title: "Conversion", file: "Conversion.mp3" }
+
+{ title: "Cual siervo", file: "CualSiervo.mp3" }
+
+{ title: "Cuando vengas a la casa de Dios", file: "CuandoVengasALaCasaDeDios.mp3" }
+
+{ title: "Despedida", file: "Despedida.mp3" }
+
+{ title: "Diez Virgenes", file: "DiezVrgenes.mp3" }
+
+{ title: "Dios", file: "Dios.mp3" }
+
+{ title: "Dios de tu padre", file: "DiosDeTuPadre.mp3" }
+
+{ title: "Dios esta aqui", file: "DiosEstaAqui.mp3" }
+
+{ title: "Diosito nos ayuda", file: "DiositoNosAyuda.mp3" }
+
+{ title: "Divinidad y ciencia", file: "DivinidadYCiencia.mp3" }
+
+{ title: "El amor", file: "ElAmor.mp3" }
+
+{ title: "El amor", file: "ElAmor2.mp3" }
+
+{ title: "El criticon", file: "ElCriticon.mp3" }
+
+{ title: "El hermano del rodeo", file: "ElHermanoDelRodeo.mp3" }
+
+{ title: "El pregon", file: "ElPregon.mp3" }
+
+{ title: "Eli Eli", file: "EliEli.mp3" }
+
+{ title: "Elias", file: "Elias.mp3" }
+
+{ title: "En paz me acostare", file: "EnPazMeAcostare.mp3" }
+
+{ title: "Espiritu santo", file: "EspirituSanto.mp3" }
+
+
+{ title: "Ezequias", file: "Ezequias.mp3" }
+
+
+{ title: "Fe", file: "Fe.mp3" }
+
+{ title: "Final Trompeta", file: "FinalTrompeta.mp3" }
+
+{ title: "Final Trompeta", file: "FinalTrompeta2.mp3" }
+
+{ title: "Hermosa flor", file: "HermosaFlor.mp3" }
+
+{ title: "Infinito amor", file: "InfinitoAmor.mp3" }
+
+{ title: "Jacob", file: "Jacob.mp3" }
+
+{ title: "Jilguero", file: "Jilguero.mp3" }
+
+{ title: "Job", file: "Job.mp3" }
+
+{ title: "Juicio", file: "Juicio.mp3" }
+
+{ title: "Juicio", file: "Juicio2.mp3" }
+
+{ title: "La juventud", file: "LaJuventud.mp3" }
+
+{ title: "Las redes", file: "LasRedes.mp3" }
+
+{ title: "Lazaro", file: "Lazaro.mp3" }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ];
 
