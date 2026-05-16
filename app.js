@@ -39,6 +39,38 @@ const likeBtn = document.getElementById("likeBtn");
 const loginBtn = document.getElementById("loginBtn");
 
 const userInfo = document.getElementById("userInfo");
+/* =========================
+   INSTALL PWA
+========================= */
+
+const installBtn = document.getElementById("installBtn");
+
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+
+    e.preventDefault();
+
+    deferredPrompt = e;
+
+    installBtn.style.display = "block";
+});
+
+installBtn.addEventListener("click", async () => {
+
+    if(!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    const choiceResult = await deferredPrompt.userChoice;
+
+    if(choiceResult.outcome === "accepted"){
+
+        console.log("PWA instalada");
+    }
+
+    deferredPrompt = null;
+});
 
 /* PLAYLIST */
 
