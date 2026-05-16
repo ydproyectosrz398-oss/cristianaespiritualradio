@@ -453,3 +453,39 @@ if("serviceWorker" in navigator){
 
     navigator.serviceWorker.register("sw.js");
 }
+/* =========================
+   WAKE LOCK
+========================= */
+
+let wakeLock = null;
+
+async function activarWakeLock(){
+
+    try{
+
+        wakeLock = await navigator.wakeLock.request("screen");
+
+        console.log("Wake Lock activado");
+
+    }catch(err){
+
+        console.log("Wake Lock error:", err);
+    }
+}
+
+/* ACTIVAR AL TOCAR PLAY */
+
+playBtn.addEventListener("click", () => {
+
+    activarWakeLock();
+});
+
+/* REACTIVAR SI REGRESA A LA APP */
+
+document.addEventListener("visibilitychange", async () => {
+
+    if(wakeLock !== null && document.visibilityState === "visible"){
+
+        activarWakeLock();
+    }
+});
