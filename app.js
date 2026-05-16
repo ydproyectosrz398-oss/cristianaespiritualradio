@@ -146,7 +146,7 @@ const songs = [
 
     { title: "Despedida", file: "Despedida.mp3" },
 
-    { title: "Diez Virgenes", file: "DiezVirgenes.mp3" },
+    { title: "Diez Virgenes", file: "DiezVrgenes.mp3" },
 
     { title: "Dios", file: "Dios.mp3" },
 
