@@ -348,29 +348,36 @@ playBtn.addEventListener("click", async () => {
 
         console.log(error);
     }
-    /* =========================
+  /* =========================
    GUARDAR PROGRESO
 ========================= */
 
-audio.addEventListener("timeupdate", () => {
+setInterval(() => {
 
-    localStorage.setItem("currentSong", currentSong);
+    if(!audio.paused){
 
-    localStorage.setItem("currentTime", audio.currentTime);
-});
-});
+        localStorage.setItem("currentSong", currentSong);
+
+        localStorage.setItem("currentTime", audio.currentTime);
+    }
+
+}, 5000);
+
+    
 /* =========================
-   RANDOM + ANUNCIO CADA 3
+   SHUFFLE INTELIGENTE
 ========================= */
 
 let songsPlayed = 0;
 
+let playedSongs = [];
+
 audio.addEventListener("ended", () => {
 
-    /* SI ACABA DE SONAR EL ANUNCIO */
+    /* SI TERMINO EL ANUNCIO */
     if(songs[currentSong].file === "AnuncioRadio.mp3"){
 
-        currentSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
+        currentSong = getRandomSong();
 
     }else{
 
@@ -385,18 +392,46 @@ audio.addEventListener("ended", () => {
 
         }else{
 
-            currentSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
+            currentSong = getRandomSong();
         }
     }
 
     localStorage.setItem("currentSong", currentSong);
 
+    localStorage.setItem("currentTime", 0);
+
     audio.src = songs[currentSong].file;
+
+    audio.currentTime = 0;
 
     songTitle.innerText = songs[currentSong].title;
 
     audio.play();
 });
+
+/* RANDOM SIN REPETIR */
+
+function getRandomSong(){
+
+    /* RESETEAR HISTORIAL */
+
+    if(playedSongs.length >= songs.length - 1){
+
+        playedSongs = [];
+    }
+
+    let randomSong;
+
+    do{
+
+        randomSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
+
+    }while(playedSongs.includes(randomSong));
+
+    playedSongs.push(randomSong);
+
+    return randomSong;
+}
 
 /* LOGIN GOOGLE */
 
