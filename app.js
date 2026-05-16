@@ -315,14 +315,35 @@ audio.addEventListener("timeupdate", () => {
     localStorage.setItem("currentTime", audio.currentTime);
 });
 });
-
 /* =========================
-   SIGUIENTE RANDOM
+   RANDOM + ANUNCIO CADA 3
 ========================= */
+
+let songsPlayed = 0;
 
 audio.addEventListener("ended", () => {
 
-    currentSong = Math.floor(Math.random() * songs.length);
+    /* SI ACABA DE SONAR EL ANUNCIO */
+    if(songs[currentSong].file === "AnuncioRadio.mp3"){
+
+        currentSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
+
+    }else{
+
+        songsPlayed++;
+
+        /* CADA 3 CANCIONES */
+        if(songsPlayed >= 3){
+
+            currentSong = 0;
+
+            songsPlayed = 0;
+
+        }else{
+
+            currentSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
+        }
+    }
 
     localStorage.setItem("currentSong", currentSong);
 
