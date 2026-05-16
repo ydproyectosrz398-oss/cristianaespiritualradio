@@ -252,14 +252,34 @@ let currentSong = 0;
 
 let currentUser = null;
 
-/* CANCION INICIAL */
+/* =========================
+   INICIO ALEATORIO + GUARDADO
+========================= */
 
-currentSong = 0;
+let savedSong = localStorage.getItem("currentSong");
+
+let savedTime = localStorage.getItem("currentTime");
+
+if(savedSong !== null){
+
+    currentSong = parseInt(savedSong);
+
+}else{
+
+    currentSong = Math.floor(Math.random() * songs.length);
+}
 
 audio.src = songs[currentSong].file;
 
 songTitle.innerText = songs[currentSong].title;
 
+audio.addEventListener("loadedmetadata", () => {
+
+    if(savedTime){
+
+        audio.currentTime = parseFloat(savedTime);
+    }
+});
 
 /* PLAY */
 
@@ -284,18 +304,27 @@ playBtn.addEventListener("click", async () => {
 
         console.log(error);
     }
+    /* =========================
+   GUARDAR PROGRESO
+========================= */
+
+audio.addEventListener("timeupdate", () => {
+
+    localStorage.setItem("currentSong", currentSong);
+
+    localStorage.setItem("currentTime", audio.currentTime);
+});
 });
 
-/* SIGUIENTE */
+/* =========================
+   SIGUIENTE RANDOM
+========================= */
 
 audio.addEventListener("ended", () => {
 
-    currentSong++;
+    currentSong = Math.floor(Math.random() * songs.length);
 
-    if(currentSong >= songs.length){
-
-        currentSong = 0;
-    }
+    localStorage.setItem("currentSong", currentSong);
 
     audio.src = songs[currentSong].file;
 
