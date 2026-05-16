@@ -264,9 +264,12 @@ let currentUser = null;
 
 /* CANCION INICIAL */
 
-audio.src = songs[0].file;
+currentSong = 0;
 
-songTitle.innerText = songs[0].title;
+audio.src = songs[currentSong].file;
+
+songTitle.innerText = songs[currentSong].title;
+
 
 /* PLAY */
 
@@ -278,13 +281,13 @@ playBtn.addEventListener("click", async () => {
 
             await audio.play();
 
-            playBtn.innerText = "PAUSE";
+            playBtn.innerText = "⏸ PAUSE";
 
         }else{
 
             audio.pause();
 
-            playBtn.innerText = "PLAY";
+           playBtn.innerText = "▶ PLAY";
         }
 
     }catch(error){
