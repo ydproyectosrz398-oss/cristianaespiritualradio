@@ -164,6 +164,35 @@ const songs = [
 
 { title: "Lazaro", file: "Lazaro.mp3" }
 
+{ title: "Lazaro", file: "Lazaro2.mp3" }
+
+{ title: "Lista esta", file: "ListaEst.mp3" }
+
+{ title: "Lista esta", file: "ListaEsta.mp3" }
+
+{ title: "Mi guitarra", file: "MiGuitarra.mp3" 
+
+ { title: "Ministrando", file: "Ministrando.mp3" }
+
+ { title: "Mis ojos", file: "MisOjos.mp3" }
+
+{ title: "Monedas de plata", file: "MonedasDePlata.mp3" }
+
+ { title: "Mujer virtuosa", file: "MujerVirtuosa.mp3" }
+
+ { title: "Niños a mi", file: "NiñosAMi.mp3" }
+
+ { title: "Nunxa me dejaras", file: "NuncaMeDejaras.mp3" }
+
+ { title: "Pastor", file: "Pastor.mp3" }
+
+ { title: "Pedro en la carcel", file: "PedroEnLaCarcel.mp3" }
+
+ { title: "Poder de Dios", file: "PoderDeDios.mp3" }
+
+
+
+
 
 
 
