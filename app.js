@@ -348,7 +348,7 @@ playBtn.addEventListener("click", async () => {
 
         console.log(error);
     }
-  /* =========================
+ /* =========================
    GUARDAR PROGRESO
 ========================= */
 
