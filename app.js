@@ -39,6 +39,36 @@ const likeBtn = document.getElementById("likeBtn");
 const loginBtn = document.getElementById("loginBtn");
 
 const userInfo = document.getElementById("userInfo");
+
+const intro = document.getElementById("intro");
+
+const video = document.getElementById("introVideo");
+
+const player = document.getElementById("player");
+
+if(video){
+
+    video.onended = () => {
+
+        intro.style.opacity = "0";
+
+        setTimeout(() => {
+
+            intro.style.display = "none";
+
+            player.classList.remove("hidden");
+
+        }, 500);
+    };
+
+    video.onerror = () => {
+
+        intro.style.display = "none";
+
+        player.classList.remove("hidden");
+    };
+}
+
 /* =========================
    INSTALL PWA
 ========================= */
