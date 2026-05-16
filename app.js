@@ -18,6 +18,18 @@ const db = firebase.database();
 
 const audio = document.getElementById("audio");
 
+/* =========================
+   AUDIO BACKGROUND
+========================= */
+
+audio.setAttribute("playsinline", "true");
+
+audio.setAttribute("webkit-playsinline", "true");
+
+audio.loop = false;
+
+audio.preload = "auto";
+
 const playBtn = document.getElementById("playBtn");
 
 const songTitle = document.getElementById("songTitle");
