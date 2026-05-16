@@ -190,24 +190,68 @@ const songs = [
 
  { title: "Poder de Dios", file: "PoderDeDios.mp3" }
 
+ { title: "Por la mañana", file: "PorLaMañana.mp3" }
+
+ { title: "Samaritano", file: "SAMARITANO.mp3" }
+
+ { title: "Salmo 67", file: "Salmo67.mp3" }
+
+ { title: "Se visten de gala", file: "SeVistenDeGala.mp3" 
+
+  { title: "Solo uno es", file: "SoloUnoEs.mp3" }
+
+  { title: "Tu rostro", file: "TuRostro.mp3" }
+
+  { title: "Boda", file: "VistenDeGala.mp3" }
+
+  { title: "Xv años", file: "XVAnos.mp3" }
+
+  { title: "Ante tu altar", file: "antetualtar2.mp3" }
+
+  { title: "Bastate de mi gracia", file: "bastatemigracia2.mp3" }
 
 
+  { title: "Convencion", file: "convencion.mp3" }
 
+  { title: "El canto de mi alma", file: "elcantodemialma.mp3" }
 
+  { title: "El ocaso", file: "elocaso.mp3" }
 
+  { title: "Gala", file: "gala.mp3" }
 
+  { title: "Grandes ciudades", file: "grandesciudades.mp3" }
 
+  { title: "Hermano gruñon", file: "hermanogruñon.mp3" }
 
+  { title: "La puerta", file: "lapuerta.mp3" }
 
+  { title: "Llename de ti", file: "llenamedeti.mp3" }
 
+  { title: "Mi dulce niña", file: "midulceniña.mp3" }
 
+  { title: "Mi madre es", file: "mimadrees.mp3" }
 
+  { title: "Ministerio de Dios", file: "ministeriodedios.mp3" }
 
+  { title: "Mono de papel", file: "monodepapel.mp3" }
 
+  { title: "Morir cantando", file: "morircantando.mp3" }
 
+  { title: "No morire", file: "nomorire.mp3" }
 
+  { title: "Nunca me dejaras", file: "nuncamedejaras2.mp3" }
 
+  { title: "Profecia", file: "profecia.mp3" }
 
+  { title: "Recorrido de Pablo", file: "recorridodepablo.mp3" }
+
+  { title: "Tu sabes", file: "tusabes.mp3" }
+
+  { title: "Volar", file: "volar.mp3" }
+
+  { title: "Yo te seguire", file: "yoteseguire.mp3" }
+
+  
 
 
 ];
