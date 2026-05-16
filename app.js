@@ -56,203 +56,193 @@ const songs = [
 
     { title: "7 Trompetas", file: "7trompetas.mp3" },
 
-    { title: "A tus labios", file: "ATusLabios.mp3" }
-    
-     { title: "Adan", file: "Adan.mp3" }
+    { title: "A tus labios", file: "ATusLabios.mp3" },
 
-     { title: "Ahora Ven", file: "AhoraVen.mp3" }
+    { title: "Adan", file: "Adan.mp3" },
 
-     { title: "Alabad a Jehova", file: "AlabadAJehova.mp3" }
+    { title: "Ahora Ven", file: "AhoraVen.mp3" },
 
-    { title: "Alabale al Señor", file: "AlabaleAlSeñor.mp3" }
+    { title: "Alabad a Jehova", file: "AlabadAJehova.mp3" },
 
-    { title: "Alma asustada", file: "AlmaAsustada.mp3" }
+    { title: "Alabale al Señor", file: "AlabaleAlSenor.mp3" },
 
-   { title: "Alma cuerpo y corazon", file: "AlmaCuerpoYCorazon.mp3" }
+    { title: "Alma asustada", file: "AlmaAsustada.mp3" },
 
-    { title: "Alma de poeta", file: "AlmaDePoeta.mp3" }
+    { title: "Alma cuerpo y corazon", file: "AlmaCuerpoYCorazon.mp3" },
 
-   { title: "Almas expuestas", file: "AlmasExpuestas.mp3" }
+    { title: "Alma de poeta", file: "AlmaDePoeta.mp3" },
 
-{ title: "Almas perdidas", file: "AlmasPerdidas.mp3" }
+    { title: "Almas expuestas", file: "AlmasExpuestas.mp3" },
 
-{ title: "Ante tu altar", file: "AnteTuAltar.mp3" }
- 
-{ title: "Aquella noche", file: "AquellaNoche.mp3" }
+    { title: "Almas perdidas", file: "AlmasPerdidas.mp3" },
 
- { title: "Aquella tarde gris", file: "AquellaTardeGris.mp3" }
+    { title: "Ante tu altar", file: "AnteTuAltar.mp3" },
 
- { title: "Ayuda Idonea", file: "AyudaIdo.mp3" }
+    { title: "Aquella noche", file: "AquellaNoche.mp3" },
 
- { title: "Basate de mi gracia", file: "BastateMiGracia.mp3" }
+    { title: "Aquella tarde gris", file: "AquellaTardeGris.mp3" },
 
- { title: "Cada que me hablan de ti", file: "CadaQueMeHablan.mp3" }
+    { title: "Ayuda Idonea", file: "AyudaIdo.mp3" },
 
- { title: "Cancion de amor", file: "CancionDeAmor.mp3" }
+    { title: "Bastate de mi gracia", file: "BastateMiGracia.mp3" },
 
-{ title: "Cancion de amor", file: "Canciondeamor2.mp3" }
+    { title: "Cada que me hablan de ti", file: "CadaQueMeHablan.mp3" },
 
-{ title: "Cancion de amor", file: "CancionDeAmor.mp3" }
+    { title: "Cancion de amor", file: "CancionDeAmor.mp3" },
 
-{ title: "El cantar de las aves", file: "CantarDeLasAves.mp3" }
+    { title: "Cancion de amor 2", file: "Canciondeamor2.mp3" },
 
-{ title: "Conversion", file: "Conversion.mp3" }
+    { title: "El cantar de las aves", file: "CantarDeLasAves.mp3" },
 
-{ title: "Cual siervo", file: "CualSiervo.mp3" }
+    { title: "Conversion", file: "Conversion.mp3" },
 
-{ title: "Cuando vengas a la casa de Dios", file: "CuandoVengasALaCasaDeDios.mp3" }
+    { title: "Cual siervo", file: "CualSiervo.mp3" },
 
-{ title: "Despedida", file: "Despedida.mp3" }
+    { title: "Cuando vengas a la casa de Dios", file: "CuandoVengasALaCasaDeDios.mp3" },
 
-{ title: "Diez Virgenes", file: "DiezVrgenes.mp3" }
+    { title: "Despedida", file: "Despedida.mp3" },
 
-{ title: "Dios", file: "Dios.mp3" }
+    { title: "Diez Virgenes", file: "DiezVirgenes.mp3" },
 
-{ title: "Dios de tu padre", file: "DiosDeTuPadre.mp3" }
+    { title: "Dios", file: "Dios.mp3" },
 
-{ title: "Dios esta aqui", file: "DiosEstaAqui.mp3" }
+    { title: "Dios de tu padre", file: "DiosDeTuPadre.mp3" },
 
-{ title: "Diosito nos ayuda", file: "DiositoNosAyuda.mp3" }
+    { title: "Dios esta aqui", file: "DiosEstaAqui.mp3" },
 
-{ title: "Divinidad y ciencia", file: "DivinidadYCiencia.mp3" }
+    { title: "Diosito nos ayuda", file: "DiositoNosAyuda.mp3" },
 
-{ title: "El amor", file: "ElAmor.mp3" }
+    { title: "Divinidad y ciencia", file: "DivinidadYCiencia.mp3" },
 
-{ title: "El amor", file: "ElAmor2.mp3" }
+    { title: "El amor", file: "ElAmor.mp3" },
 
-{ title: "El criticon", file: "ElCriticon.mp3" }
+    { title: "El amor 2", file: "ElAmor2.mp3" },
 
-{ title: "El hermano del rodeo", file: "ElHermanoDelRodeo.mp3" }
+    { title: "El criticon", file: "ElCriticon.mp3" },
 
-{ title: "El pregon", file: "ElPregon.mp3" }
+    { title: "El hermano del rodeo", file: "ElHermanoDelRodeo.mp3" },
 
-{ title: "Eli Eli", file: "EliEli.mp3" }
+    { title: "El pregon", file: "ElPregon.mp3" },
 
-{ title: "Elias", file: "Elias.mp3" }
+    { title: "Eli Eli", file: "EliEli.mp3" },
 
-{ title: "En paz me acostare", file: "EnPazMeAcostare.mp3" }
+    { title: "Elias", file: "Elias.mp3" },
 
-{ title: "Espiritu santo", file: "EspirituSanto.mp3" }
+    { title: "En paz me acostare", file: "EnPazMeAcostare.mp3" },
 
+    { title: "Espiritu santo", file: "EspirituSanto.mp3" },
 
-{ title: "Ezequias", file: "Ezequias.mp3" }
+    { title: "Ezequias", file: "Ezequias.mp3" },
 
+    { title: "Fe", file: "Fe.mp3" },
 
-{ title: "Fe", file: "Fe.mp3" }
+    { title: "Final Trompeta", file: "FinalTrompeta.mp3" },
 
-{ title: "Final Trompeta", file: "FinalTrompeta.mp3" }
+    { title: "Final Trompeta 2", file: "FinalTrompeta2.mp3" },
 
-{ title: "Final Trompeta", file: "FinalTrompeta2.mp3" }
+    { title: "Hermosa flor", file: "HermosaFlor.mp3" },
 
-{ title: "Hermosa flor", file: "HermosaFlor.mp3" }
+    { title: "Infinito amor", file: "InfinitoAmor.mp3" },
 
-{ title: "Infinito amor", file: "InfinitoAmor.mp3" }
+    { title: "Jacob", file: "Jacob.mp3" },
 
-{ title: "Jacob", file: "Jacob.mp3" }
+    { title: "Jilguero", file: "Jilguero.mp3" },
 
-{ title: "Jilguero", file: "Jilguero.mp3" }
+    { title: "Job", file: "Job.mp3" },
 
-{ title: "Job", file: "Job.mp3" }
+    { title: "Juicio", file: "Juicio.mp3" },
 
-{ title: "Juicio", file: "Juicio.mp3" }
+    { title: "Juicio 2", file: "Juicio2.mp3" },
 
-{ title: "Juicio", file: "Juicio2.mp3" }
+    { title: "La juventud", file: "LaJuventud.mp3" },
 
-{ title: "La juventud", file: "LaJuventud.mp3" }
+    { title: "Las redes", file: "LasRedes.mp3" },
 
-{ title: "Las redes", file: "LasRedes.mp3" }
+    { title: "Lazaro", file: "Lazaro.mp3" },
 
-{ title: "Lazaro", file: "Lazaro.mp3" }
+    { title: "Lazaro 2", file: "Lazaro2.mp3" },
 
-{ title: "Lazaro", file: "Lazaro2.mp3" }
+    { title: "Lista esta", file: "ListaEst.mp3" },
 
-{ title: "Lista esta", file: "ListaEst.mp3" }
+    { title: "Lista esta 2", file: "ListaEsta.mp3" },
 
-{ title: "Lista esta", file: "ListaEsta.mp3" }
+    { title: "Mi guitarra", file: "MiGuitarra.mp3" },
 
-{ title: "Mi guitarra", file: "MiGuitarra.mp3" 
+    { title: "Ministrando", file: "Ministrando.mp3" },
 
- { title: "Ministrando", file: "Ministrando.mp3" }
+    { title: "Mis ojos", file: "MisOjos.mp3" },
 
- { title: "Mis ojos", file: "MisOjos.mp3" }
+    { title: "Monedas de plata", file: "MonedasDePlata.mp3" },
 
-{ title: "Monedas de plata", file: "MonedasDePlata.mp3" }
+    { title: "Mujer virtuosa", file: "MujerVirtuosa.mp3" },
 
- { title: "Mujer virtuosa", file: "MujerVirtuosa.mp3" }
+    { title: "Ninos a mi", file: "NinosAMi.mp3" },
 
- { title: "Niños a mi", file: "NiñosAMi.mp3" }
+    { title: "Nunca me dejaras", file: "NuncaMeDejaras.mp3" },
 
- { title: "Nunxa me dejaras", file: "NuncaMeDejaras.mp3" }
+    { title: "Pastor", file: "Pastor.mp3" },
 
- { title: "Pastor", file: "Pastor.mp3" }
+    { title: "Pedro en la carcel", file: "PedroEnLaCarcel.mp3" },
 
- { title: "Pedro en la carcel", file: "PedroEnLaCarcel.mp3" }
+    { title: "Poder de Dios", file: "PoderDeDios.mp3" },
 
- { title: "Poder de Dios", file: "PoderDeDios.mp3" }
+    { title: "Por la manana", file: "PorLaManana.mp3" },
 
- { title: "Por la mañana", file: "PorLaMañana.mp3" }
+    { title: "Samaritano", file: "SAMARITANO.mp3" },
 
- { title: "Samaritano", file: "SAMARITANO.mp3" }
+    { title: "Salmo 67", file: "Salmo67.mp3" },
 
- { title: "Salmo 67", file: "Salmo67.mp3" }
+    { title: "Se visten de gala", file: "SeVistenDeGala.mp3" },
 
- { title: "Se visten de gala", file: "SeVistenDeGala.mp3" 
+    { title: "Solo uno es", file: "SoloUnoEs.mp3" },
 
-  { title: "Solo uno es", file: "SoloUnoEs.mp3" }
+    { title: "Tu rostro", file: "TuRostro.mp3" },
 
-  { title: "Tu rostro", file: "TuRostro.mp3" }
+    { title: "Boda", file: "VistenDeGala.mp3" },
 
-  { title: "Boda", file: "VistenDeGala.mp3" }
+    { title: "XV años", file: "XVAnos.mp3" },
 
-  { title: "Xv años", file: "XVAnos.mp3" }
+    { title: "Ante tu altar 2", file: "antetualtar2.mp3" },
 
-  { title: "Ante tu altar", file: "antetualtar2.mp3" }
+    { title: "Bastate de mi gracia 2", file: "bastatemigracia2.mp3" },
 
-  { title: "Bastate de mi gracia", file: "bastatemigracia2.mp3" }
+    { title: "El canto de mi alma", file: "elcantodemialma.mp3" },
 
+    { title: "El ocaso", file: "elocaso.mp3" },
 
-  { title: "Convencion", file: "convencion.mp3" }
+    { title: "Gala", file: "gala.mp3" },
 
-  { title: "El canto de mi alma", file: "elcantodemialma.mp3" }
+    { title: "Grandes ciudades", file: "grandesciudades.mp3" },
 
-  { title: "El ocaso", file: "elocaso.mp3" }
+    { title: "Hermano grunon", file: "hermanogrunon.mp3" },
 
-  { title: "Gala", file: "gala.mp3" }
+    { title: "La puerta", file: "lapuerta.mp3" },
 
-  { title: "Grandes ciudades", file: "grandesciudades.mp3" }
+    { title: "Llename de ti", file: "llenamedeti.mp3" },
 
-  { title: "Hermano gruñon", file: "hermanogruñon.mp3" }
+    { title: "Mi dulce nina", file: "midulcenina.mp3" },
 
-  { title: "La puerta", file: "lapuerta.mp3" }
+    { title: "Mi madre es", file: "mimadrees.mp3" },
 
-  { title: "Llename de ti", file: "llenamedeti.mp3" }
+    { title: "Ministerio de Dios", file: "ministeriodedios.mp3" },
 
-  { title: "Mi dulce niña", file: "midulceniña.mp3" }
+    { title: "Mono de papel", file: "monodepapel.mp3" },
 
-  { title: "Mi madre es", file: "mimadrees.mp3" }
+    { title: "Morir cantando", file: "morircantando.mp3" },
 
-  { title: "Ministerio de Dios", file: "ministeriodedios.mp3" }
+    { title: "No morire", file: "nomorire.mp3" },
 
-  { title: "Mono de papel", file: "monodepapel.mp3" }
+    { title: "Nunca me dejaras 2", file: "nuncamedejaras2.mp3" },
 
-  { title: "Morir cantando", file: "morircantando.mp3" }
+    { title: "Profecia", file: "profecia.mp3" },
 
-  { title: "No morire", file: "nomorire.mp3" }
+    { title: "Recorrido de Pablo", file: "recorridodepablo.mp3" },
 
-  { title: "Nunca me dejaras", file: "nuncamedejaras2.mp3" }
+    { title: "Tu sabes", file: "tusabes.mp3" },
 
-  { title: "Profecia", file: "profecia.mp3" }
+    { title: "Volar", file: "volar.mp3" },
 
-  { title: "Recorrido de Pablo", file: "recorridodepablo.mp3" }
-
-  { title: "Tu sabes", file: "tusabes.mp3" }
-
-  { title: "Volar", file: "volar.mp3" }
-
-  { title: "Yo te seguire", file: "yoteseguire.mp3" }
-
-  
-
+    { title: "Yo te seguire", file: "yoteseguire.mp3" }
 
 ];
 
