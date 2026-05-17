@@ -243,7 +243,7 @@ const songs = [
 
     { title: "Mujer virtuosa", file: "MujerVirtuosa.mp3" },
 
-    { title: "Ninos a mi", file: "NinosAMi.mp3" },
+    { title: "Niños a mi", file: "NiñosAMi.mp3" },
 
     { title: "Nunca me dejaras", file: "NuncaMeDejaras.mp3" },
 
