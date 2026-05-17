@@ -253,7 +253,7 @@ const songs = [
 
     { title: "Poder de Dios", file: "PoderDeDios.mp3" },
 
-    { title: "Por la manana", file: "PorLaManana.mp3" },
+    { title: "Por la manana", file: "PorLaMañana.mp3" },
 
     { title: "Samaritano", file: "SAMARITANO.mp3" },
 
