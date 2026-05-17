@@ -18,6 +18,18 @@ const db = firebase.database();
 
 const audio = document.getElementById("audio");
 
+/* AUDIO BACKGROUND */
+
+audio.preload = "auto";
+
+audio.loop = false;
+
+audio.setAttribute("playsinline", "true");
+
+audio.setAttribute("webkit-playsinline", "true");
+
+audio.crossOrigin = "anonymous";
+
 /* =========================
    AUDIO BACKGROUND
 ========================= */
@@ -572,5 +584,25 @@ document.addEventListener("visibilitychange", async () => {
     if(wakeLock !== null && document.visibilityState === "visible"){
 
         activarWakeLock();
+    }
+});
+
+/* REANUDAR AUDIO SI REGRESA A LA APP */
+
+document.addEventListener("visibilitychange", async () => {
+
+    if(document.visibilityState === "visible"){
+
+        if(audio.paused){
+
+            try{
+
+                await audio.play();
+
+            }catch(err){
+
+                console.log(err);
+            }
+        }
     }
 });
