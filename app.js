@@ -223,7 +223,7 @@ const songs = [
 
     { title: "La juventud", file: "LaJuventud.mp3" },
 
-    { title: "Las redes", file: "LasRedes.mp3" },
+    { title: "Las redes", file: "LaRedes.mp3" },
 
     { title: "Lazaro", file: "Lazaro.mp3" },
 
