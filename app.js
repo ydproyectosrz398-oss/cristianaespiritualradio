@@ -131,7 +131,7 @@ const songs = [
 
     { title: "Alabad a Jehova", file: "AlabadAJehova.mp3" },
 
-    { title: "Alabale al Señor", file: "AlabaleAlSenor.mp3" },
+    { title: "Alabe al Señor", file: "AlabeAlSeñor.mp3" },
 
     { title: "Alma asustada", file: "AlmaAsustada.mp3" },
 
@@ -337,6 +337,23 @@ if(savedSong !== null){
 audio.src = songs[currentSong].file;
 
 songTitle.innerText = songs[currentSong].title;
+
+/* CONTINUAR SOLO MISMA CANCION */
+
+audio.addEventListener("loadedmetadata", () => {
+
+    let lastSong = localStorage.getItem("currentSong");
+
+    let savedTime = localStorage.getItem("currentTime");
+
+    if(parseInt(lastSong) === currentSong){
+
+        if(savedTime){
+
+            audio.currentTime = parseFloat(savedTime);
+        }
+    }
+});
 
 /* CONTINUAR SOLO MISMA CANCION */
 
