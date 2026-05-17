@@ -42,32 +42,27 @@ const userInfo = document.getElementById("userInfo");
 
 const intro = document.getElementById("intro");
 
-const video = document.getElementById("introVideo");
+/* =========================
+   INTRO IMAGE
+========================= */
+
+const intro = document.getElementById("intro");
 
 const player = document.getElementById("player");
 
-if(video){
+setTimeout(() => {
 
-    video.onended = () => {
+    intro.style.opacity = "0";
 
-        intro.style.opacity = "0";
-
-        setTimeout(() => {
-
-            intro.style.display = "none";
-
-            player.classList.remove("hidden");
-
-        }, 500);
-    };
-
-    video.onerror = () => {
+    setTimeout(() => {
 
         intro.style.display = "none";
 
         player.classList.remove("hidden");
-    };
-}
+
+    }, 500);
+
+}, 4000);
 
 /* =========================
    INSTALL PWA
