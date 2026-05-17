@@ -233,7 +233,7 @@ const songs = [
 
     { title: "Lista esta 2", file: "ListaEsta.mp3" },
 
-    { title: "Mi guitarra", file: "MiGuitarra.mp3" },
+    { title: "Mi guitarra", file: "MiGuItarra.mp3" },
 
     { title: "Ministrando", file: "Ministrando.mp3" },
 
