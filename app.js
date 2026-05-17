@@ -325,8 +325,6 @@ let currentUser = null;
 
 let savedSong = localStorage.getItem("currentSong");
 
-let savedTime = localStorage.getItem("currentTime");
-
 if(savedSong !== null){
 
     currentSong = parseInt(savedSong);
@@ -340,11 +338,20 @@ audio.src = songs[currentSong].file;
 
 songTitle.innerText = songs[currentSong].title;
 
+/* CONTINUAR SOLO MISMA CANCION */
+
 audio.addEventListener("loadedmetadata", () => {
 
-    if(savedTime){
+    let lastSong = localStorage.getItem("currentSong");
 
-        audio.currentTime = parseFloat(savedTime);
+    let savedTime = localStorage.getItem("currentTime");
+
+    if(parseInt(lastSong) === currentSong){
+
+        if(savedTime){
+
+            audio.currentTime = parseFloat(savedTime);
+        }
     }
 });
 
