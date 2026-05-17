@@ -219,3 +219,39 @@ h2{
 .google-icon{
     width:20px;
 }
+
+/* =========================
+   INTRO IMAGE
+========================= */
+
+#intro{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000;
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    transition: opacity 0.5s ease;
+}
+
+#intro img{
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hidden{
+
+    display: none !important;
+}
