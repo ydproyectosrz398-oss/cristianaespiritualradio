@@ -40,8 +40,6 @@ const loginBtn = document.getElementById("loginBtn");
 
 const userInfo = document.getElementById("userInfo");
 
-const intro = document.getElementById("intro");
-
 /* =========================
    INTRO IMAGE
 ========================= */
