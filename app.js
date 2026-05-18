@@ -319,6 +319,16 @@ const songs = [
 
     { title: "Volar", file: "volar.mp3" },
 
+    { title: "Lagrimas de felicidad", file: "LagrimasdeFelicidad.mp3" },
+
+   { title: "Los caminantes", file: "Loscaminantes.mp3" },
+
+     { title: "Olor suave", file: "Olorsuave.mp3" },
+
+    { title: "Oracion sanadora", file: "Oracionsanadora.mp3" },
+
+    { title: "Reflexion", file: "reflexion.mp3" },
+
     { title: "Yo te seguire", file: "yoteseguire.mp3" }
 
 ];
