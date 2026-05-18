@@ -133,8 +133,6 @@ const songs = [
 
     { title: "Cristo vino", file: "CristoVino.mp3" },
 
-    { title: "7 Trompetas", file: "7trompetas.mp3" },
-
     { title: "A tus labios", file: "ATusLabios.mp3" },
 
     { title: "Adan", file: "Adan.mp3" },
