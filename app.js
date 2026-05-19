@@ -620,4 +620,6 @@ document.addEventListener("visibilitychange", async () => {
 
                 console.log(err);
             }
+        }
+    }
 });
