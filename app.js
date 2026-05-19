@@ -1,3 +1,12 @@
+self.addEventListener("install", () => {
+    self.skipWaiting();
+});
+
+self.addEventListener("activate", event => {
+    event.waitUntil(clients.claim());
+});
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyAhQzly1lZemafx1SU1iQKlav6oyDTOqKw",
     authDomain: "radiocristianaespiritual.firebaseapp.com",
